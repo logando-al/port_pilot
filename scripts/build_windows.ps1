@@ -24,15 +24,22 @@ if (-not (Test-Path "dist/PortPilot.exe")) {
     Get-ChildItem -Recurse dist
 }
 
-# Create installer using Inno Setup (if available)
-if (Get-Command iscc -ErrorAction SilentlyContinue) {
+# Create installer using Inno Setup (if available AND config exists)
+if ((Get-Command iscc -ErrorAction SilentlyContinue) -and (Test-Path "installer.iss")) {
     Write-Host "Creating installer with Inno Setup..." -ForegroundColor Cyan
-    # iscc installer.iss
+    iscc installer.iss
 } else {
-    Write-Host "Inno Setup not found. Skipping installer creation." -ForegroundColor Yellow
+    if (Get-Command iscc -ErrorAction SilentlyContinue) {
+        Write-Host "Inno Setup found but 'installer.iss' missing. Skipping installer creation." -ForegroundColor Yellow
+    } else {
+        Write-Host "Inno Setup not found. Skipping installer creation." -ForegroundColor Yellow
+    }
+    
     # Rename executable for release
-    Copy-Item "dist/PortPilot.exe" "dist/PortPilot-Setup.exe" -Force
-    Write-Host "Renamed PortPilot.exe to PortPilot-Setup.exe" -ForegroundColor Green
+    if (Test-Path "dist/PortPilot.exe") {
+        Copy-Item "dist/PortPilot.exe" "dist/PortPilot-Setup.exe" -Force
+        Write-Host "Renamed PortPilot.exe to PortPilot-Setup.exe" -ForegroundColor Green
+    }
 }
 
 # Verify final artifact
