@@ -6,8 +6,9 @@ and manage SSH tunnels.
 """
 
 import sys
-from PyQt6.QtWidgets import QApplication
+
 from PyQt6.QtCore import Qt
+from PyQt6.QtWidgets import QApplication
 
 from src.core.version import VERSION
 from src.ui.tray_icon import TrayIcon
@@ -21,15 +22,15 @@ def main():
     QApplication.setHighDpiScaleFactorRoundingPolicy(
         Qt.HighDpiScaleFactorRoundingPolicy.PassThrough
     )
-    
+
     app = QApplication(sys.argv)
     app.setQuitOnLastWindowClosed(False)
     app.setApplicationName("PortPilot")
     app.setApplicationVersion(VERSION)
-    
+
     # Load configuration
     config = Config()
-    
+
     # Check for updates on startup
     if config.get("check_updates", True):
         updater = Updater()
@@ -44,11 +45,11 @@ def main():
             )
             if reply == QMessageBox.StandardButton.Yes:
                 updater.download_and_install()
-    
+
     # Create system tray icon
     tray = TrayIcon(app)
     tray.show()
-    
+
     # Show notification
     tray.showMessage(
         "PortPilot",
@@ -56,11 +57,11 @@ def main():
         TrayIcon.MessageIcon.Information,
         2000
     )
-    
+
     # Start minimized or show dashboard
     if not config.get("start_minimized", False):
         tray._open_dashboard()
-    
+
     sys.exit(app.exec())
 
 

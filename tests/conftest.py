@@ -2,21 +2,22 @@
 Pytest fixtures and configuration for PortPilot tests.
 """
 
+from unittest.mock import MagicMock
+
 import pytest
-from unittest.mock import MagicMock, patch
 
 
 @pytest.fixture
 def mock_psutil_connections():
     """Mock psutil.net_connections() response."""
-    MockConnection = MagicMock()
-    MockConnection.laddr = MagicMock(ip="127.0.0.1", port=8000)
-    MockConnection.raddr = None
-    MockConnection.pid = 1234
-    MockConnection.status = "LISTEN"
-    MockConnection.type = 1  # TCP
-    
-    return [MockConnection]
+    mock_connection = MagicMock()
+    mock_connection.laddr = MagicMock(ip="127.0.0.1", port=8000)
+    mock_connection.raddr = None
+    mock_connection.pid = 1234
+    mock_connection.status = "LISTEN"
+    mock_connection.type = 1  # TCP
+
+    return [mock_connection]
 
 
 @pytest.fixture

@@ -2,21 +2,29 @@
 TunnelListWidget - Manage SSH tunnel configurations.
 """
 
-from PyQt6.QtWidgets import (
-    QWidget, QVBoxLayout, QHBoxLayout, QListWidget, QListWidgetItem,
-    QPushButton, QDialog, QFormLayout, QLineEdit, QSpinBox,
-    QDialogButtonBox, QLabel, QMessageBox
-)
 import qtawesome as qta
 from PyQt6.QtCore import Qt
-from PyQt6.QtGui import QColor
+from PyQt6.QtWidgets import (
+    QDialog,
+    QDialogButtonBox,
+    QFormLayout,
+    QHBoxLayout,
+    QLineEdit,
+    QListWidget,
+    QListWidgetItem,
+    QMessageBox,
+    QPushButton,
+    QSpinBox,
+    QVBoxLayout,
+    QWidget,
+)
 
-from src.core.tunnel_manager import TunnelManager, TunnelConfig, TunnelStatus
+from src.core.tunnel_manager import TunnelConfig, TunnelManager, TunnelStatus
 
 
 class TunnelDialog(QDialog):
     """Dialog for adding/editing a tunnel."""
-    
+
     def __init__(self, tunnel: TunnelConfig = None, parent=None):
         super().__init__(parent)
         self.tunnel = tunnel
@@ -25,40 +33,40 @@ class TunnelDialog(QDialog):
         self._setup_ui()
         if tunnel:
             self._populate_fields()
-    
+
     def _setup_ui(self):
         layout = QFormLayout(self)
-        
+
         self.name_input = QLineEdit()
         layout.addRow("Name:", self.name_input)
-        
+
         self.user_input = QLineEdit()
         layout.addRow("Remote User:", self.user_input)
-        
+
         self.host_input = QLineEdit()
         layout.addRow("Remote Host:", self.host_input)
-        
+
         self.local_port_input = QSpinBox()
         self.local_port_input.setRange(1, 65535)
         self.local_port_input.setValue(8080)
         layout.addRow("Local Port:", self.local_port_input)
-        
+
         self.remote_port_input = QSpinBox()
         self.remote_port_input.setRange(1, 65535)
         self.remote_port_input.setValue(80)
         layout.addRow("Remote Port:", self.remote_port_input)
-        
+
         self.ssh_key_input = QLineEdit()
         self.ssh_key_input.setPlaceholderText("Optional: /path/to/key")
         layout.addRow("SSH Key:", self.ssh_key_input)
-        
+
         buttons = QDialogButtonBox(
             QDialogButtonBox.StandardButton.Ok | QDialogButtonBox.StandardButton.Cancel
         )
         buttons.accepted.connect(self.accept)
         buttons.rejected.connect(self.reject)
         layout.addRow(buttons)
-    
+
     def _populate_fields(self):
         self.name_input.setText(self.tunnel.name)
         self.name_input.setReadOnly(True)
@@ -68,7 +76,7 @@ class TunnelDialog(QDialog):
         self.remote_port_input.setValue(self.tunnel.remote_port)
         if self.tunnel.ssh_key:
             self.ssh_key_input.setText(self.tunnel.ssh_key)
-    
+
     def get_config(self) -> TunnelConfig:
         return TunnelConfig(
             name=self.name_input.text(),
@@ -82,48 +90,48 @@ class TunnelDialog(QDialog):
 
 class TunnelListWidget(QWidget):
     """Widget for managing SSH tunnel configurations."""
-    
+
     def __init__(self, tunnel_manager: TunnelManager, parent=None):
         super().__init__(parent)
         self.tunnel_manager = tunnel_manager
         self._setup_ui()
         self.refresh()
-    
+
     def _setup_ui(self):
         layout = QVBoxLayout(self)
-        
+
         # Tunnel list
         self.list_widget = QListWidget()
         self.list_widget.itemDoubleClicked.connect(self._toggle_tunnel)
         layout.addWidget(self.list_widget)
-        
+
         # Buttons
         btn_layout = QHBoxLayout()
-        
+
         self.add_btn = QPushButton("Add Tunnel")
         self.add_btn.setIcon(qta.icon('fa5s.plus-circle', color='#4CAF50'))
         self.add_btn.clicked.connect(self._add_tunnel)
         btn_layout.addWidget(self.add_btn)
-        
+
         self.edit_btn = QPushButton("Edit")
         self.edit_btn.setIcon(qta.icon('fa5s.edit', color='#2196F3'))
         self.edit_btn.clicked.connect(self._edit_tunnel)
         btn_layout.addWidget(self.edit_btn)
-        
+
         self.delete_btn = QPushButton("Delete")
         self.delete_btn.setIcon(qta.icon('fa5s.trash-alt', color='#f44336'))
         self.delete_btn.clicked.connect(self._delete_tunnel)
         btn_layout.addWidget(self.delete_btn)
-        
+
         btn_layout.addStretch()
-        
+
         self.toggle_btn = QPushButton("Start")
         self.toggle_btn.setIcon(qta.icon('fa5s.play-circle', color='#4CAF50'))
         self.toggle_btn.clicked.connect(self._toggle_selected)
         btn_layout.addWidget(self.toggle_btn)
-        
+
         layout.addLayout(btn_layout)
-    
+
     def refresh(self):
         self.list_widget.clear()
         for tunnel in self.tunnel_manager.get_all_tunnels():
@@ -135,7 +143,7 @@ class TunnelListWidget(QWidget):
             )
             item.setData(Qt.ItemDataRole.UserRole, tunnel.name)
             self.list_widget.addItem(item)
-    
+
     def _add_tunnel(self):
         dialog = TunnelDialog(parent=self)
         if dialog.exec():
@@ -144,7 +152,7 @@ class TunnelListWidget(QWidget):
                 self.refresh()
             else:
                 QMessageBox.warning(self, "Error", "Tunnel name already exists.")
-    
+
     def _edit_tunnel(self):
         item = self.list_widget.currentItem()
         if not item:
@@ -156,7 +164,7 @@ class TunnelListWidget(QWidget):
             if dialog.exec():
                 self.tunnel_manager.update_tunnel(name, dialog.get_config())
                 self.refresh()
-    
+
     def _delete_tunnel(self):
         item = self.list_widget.currentItem()
         if not item:
@@ -170,12 +178,12 @@ class TunnelListWidget(QWidget):
         if reply == QMessageBox.StandardButton.Yes:
             self.tunnel_manager.remove_tunnel(name)
             self.refresh()
-    
+
     def _toggle_selected(self):
         item = self.list_widget.currentItem()
         if item:
             self._toggle_tunnel(item)
-    
+
     def _toggle_tunnel(self, item):
         name = item.data(Qt.ItemDataRole.UserRole)
         status = self.tunnel_manager.get_status(name)
