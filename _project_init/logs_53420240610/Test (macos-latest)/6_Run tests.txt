@@ -1,0 +1,100 @@
+﻿2026-01-02T20:02:32.0508640Z ##[group]Run pytest tests/ -v --cov=src --cov-report=xml
+2026-01-02T20:02:32.0509020Z [36;1mpytest tests/ -v --cov=src --cov-report=xml[0m
+2026-01-02T20:02:32.0553600Z shell: /bin/bash -e {0}
+2026-01-02T20:02:32.0553850Z env:
+2026-01-02T20:02:32.0554140Z   pythonLocation: /Users/runner/hostedtoolcache/Python/3.13.11/arm64
+2026-01-02T20:02:32.0554670Z   PKG_CONFIG_PATH: /Users/runner/hostedtoolcache/Python/3.13.11/arm64/lib/pkgconfig
+2026-01-02T20:02:32.0555150Z   Python_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.13.11/arm64
+2026-01-02T20:02:32.0555530Z   Python2_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.13.11/arm64
+2026-01-02T20:02:32.0555920Z   Python3_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.13.11/arm64
+2026-01-02T20:02:32.0556270Z   QT_QPA_PLATFORM: offscreen
+2026-01-02T20:02:32.0556460Z ##[endgroup]
+2026-01-02T20:02:32.7907730Z ============================= test session starts ==============================
+2026-01-02T20:02:32.7973780Z platform darwin -- Python 3.13.11, pytest-9.0.2, pluggy-1.6.0 -- /Library/Frameworks/Python.framework/Versions/3.13/bin/python
+2026-01-02T20:02:32.7976140Z cachedir: .pytest_cache
+2026-01-02T20:02:32.7976650Z PyQt6 6.10.1 -- Qt runtime 6.10.1 -- Qt compiled 6.10.0
+2026-01-02T20:02:32.7977740Z rootdir: /Users/runner/work/port_pilot/port_pilot
+2026-01-02T20:02:32.7978140Z configfile: pyproject.toml
+2026-01-02T20:02:32.7978460Z plugins: qt-4.5.0, cov-7.0.0
+2026-01-02T20:02:33.1890440Z collecting ... collected 4 items / 3 errors
+2026-01-02T20:02:33.1893950Z 
+2026-01-02T20:02:33.1894160Z ==================================== ERRORS ====================================
+2026-01-02T20:02:33.1894720Z _______________ ERROR collecting tests/unit/test_port_scanner.py _______________
+2026-01-02T20:02:33.1895310Z ImportError while importing test module '/Users/runner/work/port_pilot/port_pilot/tests/unit/test_port_scanner.py'.
+2026-01-02T20:02:33.1896190Z Hint: make sure your test modules/packages have valid Python names.
+2026-01-02T20:02:33.1896640Z Traceback:
+2026-01-02T20:02:33.1897200Z /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/_pytest/python.py:507: in importtestmodule
+2026-01-02T20:02:33.1897790Z     mod = import_path(
+2026-01-02T20:02:33.1898650Z /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/_pytest/pathlib.py:587: in import_path
+2026-01-02T20:02:33.1899200Z     importlib.import_module(module_name)
+2026-01-02T20:02:33.1899710Z /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/importlib/__init__.py:88: in import_module
+2026-01-02T20:02:33.1900540Z     return _bootstrap._gcd_import(name[level:], package, level)
+2026-01-02T20:02:33.1901000Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-01-02T20:02:33.1901350Z <frozen importlib._bootstrap>:1387: in _gcd_import
+2026-01-02T20:02:33.1901660Z     ???
+2026-01-02T20:02:33.1902020Z <frozen importlib._bootstrap>:1360: in _find_and_load
+2026-01-02T20:02:33.1902620Z     ???
+2026-01-02T20:02:33.1902930Z <frozen importlib._bootstrap>:1331: in _find_and_load_unlocked
+2026-01-02T20:02:33.1903360Z     ???
+2026-01-02T20:02:33.1903630Z <frozen importlib._bootstrap>:935: in _load_unlocked
+2026-01-02T20:02:33.1903940Z     ???
+2026-01-02T20:02:33.1904600Z /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/_pytest/assertion/rewrite.py:197: in exec_module
+2026-01-02T20:02:33.1905370Z     exec(co, module.__dict__)
+2026-01-02T20:02:33.1906490Z tests/unit/test_port_scanner.py:7: in <module>
+2026-01-02T20:02:33.1906880Z     from src.core.port_scanner import PortInfo, PortScanner
+2026-01-02T20:02:33.1907260Z E   ModuleNotFoundError: No module named 'src'
+2026-01-02T20:02:33.1907670Z ______________ ERROR collecting tests/unit/test_process_killer.py ______________
+2026-01-02T20:02:33.1908400Z ImportError while importing test module '/Users/runner/work/port_pilot/port_pilot/tests/unit/test_process_killer.py'.
+2026-01-02T20:02:33.1909250Z Hint: make sure your test modules/packages have valid Python names.
+2026-01-02T20:02:33.1910790Z Traceback:
+2026-01-02T20:02:33.1911500Z /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/_pytest/python.py:507: in importtestmodule
+2026-01-02T20:02:33.1912040Z     mod = import_path(
+2026-01-02T20:02:33.1912580Z /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/_pytest/pathlib.py:587: in import_path
+2026-01-02T20:02:33.1913360Z     importlib.import_module(module_name)
+2026-01-02T20:02:33.1913870Z /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/importlib/__init__.py:88: in import_module
+2026-01-02T20:02:33.1914430Z     return _bootstrap._gcd_import(name[level:], package, level)
+2026-01-02T20:02:33.1914880Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-01-02T20:02:33.1915230Z <frozen importlib._bootstrap>:1387: in _gcd_import
+2026-01-02T20:02:33.1915540Z     ???
+2026-01-02T20:02:33.1915830Z <frozen importlib._bootstrap>:1360: in _find_and_load
+2026-01-02T20:02:33.1916230Z     ???
+2026-01-02T20:02:33.1916580Z <frozen importlib._bootstrap>:1331: in _find_and_load_unlocked
+2026-01-02T20:02:33.1917170Z     ???
+2026-01-02T20:02:33.1917470Z <frozen importlib._bootstrap>:935: in _load_unlocked
+2026-01-02T20:02:33.1918350Z     ???
+2026-01-02T20:02:33.1918910Z /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/_pytest/assertion/rewrite.py:197: in exec_module
+2026-01-02T20:02:33.1919480Z     exec(co, module.__dict__)
+2026-01-02T20:02:33.1919860Z tests/unit/test_process_killer.py:7: in <module>
+2026-01-02T20:02:33.1920260Z     from src.core.process_killer import KillResult, ProcessKiller
+2026-01-02T20:02:33.1920650Z E   ModuleNotFoundError: No module named 'src'
+2026-01-02T20:02:33.1921140Z ______________ ERROR collecting tests/unit/test_tunnel_manager.py ______________
+2026-01-02T20:02:33.1921730Z ImportError while importing test module '/Users/runner/work/port_pilot/port_pilot/tests/unit/test_tunnel_manager.py'.
+2026-01-02T20:02:33.1922340Z Hint: make sure your test modules/packages have valid Python names.
+2026-01-02T20:02:33.1922700Z Traceback:
+2026-01-02T20:02:33.1923260Z /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/_pytest/python.py:507: in importtestmodule
+2026-01-02T20:02:33.1923790Z     mod = import_path(
+2026-01-02T20:02:33.1924280Z /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/_pytest/pathlib.py:587: in import_path
+2026-01-02T20:02:33.1924910Z     importlib.import_module(module_name)
+2026-01-02T20:02:33.1925490Z /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/importlib/__init__.py:88: in import_module
+2026-01-02T20:02:33.1926050Z     return _bootstrap._gcd_import(name[level:], package, level)
+2026-01-02T20:02:33.1926370Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-01-02T20:02:33.1926650Z <frozen importlib._bootstrap>:1387: in _gcd_import
+2026-01-02T20:02:33.1926920Z     ???
+2026-01-02T20:02:33.1927130Z <frozen importlib._bootstrap>:1360: in _find_and_load
+2026-01-02T20:02:33.1927390Z     ???
+2026-01-02T20:02:33.1927830Z <frozen importlib._bootstrap>:1331: in _find_and_load_unlocked
+2026-01-02T20:02:33.1928290Z     ???
+2026-01-02T20:02:33.1928510Z <frozen importlib._bootstrap>:935: in _load_unlocked
+2026-01-02T20:02:33.1928840Z     ???
+2026-01-02T20:02:33.1929260Z /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/_pytest/assertion/rewrite.py:197: in exec_module
+2026-01-02T20:02:33.1929940Z     exec(co, module.__dict__)
+2026-01-02T20:02:33.1930190Z tests/unit/test_tunnel_manager.py:7: in <module>
+2026-01-02T20:02:33.1930550Z     from src.core.tunnel_manager import TunnelConfig, TunnelManager, TunnelStatus
+2026-01-02T20:02:33.2004730Z E   ModuleNotFoundError: No module named 'src'
+2026-01-02T20:02:33.2005400Z =========================== short test summary info ============================
+2026-01-02T20:02:33.2005710Z ERROR tests/unit/test_port_scanner.py
+2026-01-02T20:02:33.2006020Z ERROR tests/unit/test_process_killer.py
+2026-01-02T20:02:33.2006840Z ERROR tests/unit/test_tunnel_manager.py
+2026-01-02T20:02:33.2007640Z !!!!!!!!!!!!!!!!!!! Interrupted: 3 errors during collection !!!!!!!!!!!!!!!!!!!!
+2026-01-02T20:02:33.2008100Z ============================== 3 errors in 0.37s ===============================
+2026-01-02T20:02:33.2415590Z ##[error]Process completed with exit code 2.

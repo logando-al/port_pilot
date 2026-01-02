@@ -1,0 +1,327 @@
+﻿2026-01-02T20:02:14.2495951Z Current runner version: '2.330.0'
+2026-01-02T20:02:14.2524942Z ##[group]Runner Image Provisioner
+2026-01-02T20:02:14.2526072Z Hosted Compute Agent
+2026-01-02T20:02:14.2526596Z Version: 20251211.462
+2026-01-02T20:02:14.2527948Z Commit: 6cbad8c2bb55d58165063d031ccabf57e2d2db61
+2026-01-02T20:02:14.2528628Z Build Date: 2025-12-11T16:28:49Z
+2026-01-02T20:02:14.2529167Z Worker ID: {d06971fe-ffdc-4b52-9d7d-905e9e5b62fb}
+2026-01-02T20:02:14.2529826Z ##[endgroup]
+2026-01-02T20:02:14.2530260Z ##[group]Operating System
+2026-01-02T20:02:14.2530777Z Microsoft Windows Server 2025
+2026-01-02T20:02:14.2531293Z 10.0.26100
+2026-01-02T20:02:14.2531703Z Datacenter
+2026-01-02T20:02:14.2532095Z ##[endgroup]
+2026-01-02T20:02:14.2532507Z ##[group]Runner Image
+2026-01-02T20:02:14.2532962Z Image: windows-2025
+2026-01-02T20:02:14.2533367Z Version: 20251216.149.1
+2026-01-02T20:02:14.2534746Z Included Software: https://github.com/actions/runner-images/blob/win25/20251216.149/images/windows/Windows2025-Readme.md
+2026-01-02T20:02:14.2536031Z Image Release: https://github.com/actions/runner-images/releases/tag/win25%2F20251216.149
+2026-01-02T20:02:14.2536842Z ##[endgroup]
+2026-01-02T20:02:14.2537793Z ##[group]GITHUB_TOKEN Permissions
+2026-01-02T20:02:14.2539696Z Contents: read
+2026-01-02T20:02:14.2540172Z Metadata: read
+2026-01-02T20:02:14.2540891Z Packages: read
+2026-01-02T20:02:14.2541568Z ##[endgroup]
+2026-01-02T20:02:14.2543809Z Secret source: Actions
+2026-01-02T20:02:14.2544423Z Prepare workflow directory
+2026-01-02T20:02:14.2976684Z Prepare all required actions
+2026-01-02T20:02:14.3019664Z Getting action download info
+2026-01-02T20:02:14.7162492Z Download action repository 'actions/checkout@v4' (SHA:34e114876b0b11c390a56381ad16ebd13914f8d5)
+2026-01-02T20:02:14.8413670Z Download action repository 'actions/setup-python@v5' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+2026-01-02T20:02:14.9773128Z Download action repository 'codecov/codecov-action@v4' (SHA:b9fd7d16f6d7d1b5d2bec1a2887e65ceed900238)
+2026-01-02T20:02:15.9102188Z Complete job name: Test (windows-latest)
+2026-01-02T20:02:16.1032048Z ##[group]Run actions/checkout@v4
+2026-01-02T20:02:16.1033741Z with:
+2026-01-02T20:02:16.1034752Z   repository: logando-al/port_pilot
+2026-01-02T20:02:16.1035974Z   token: ***
+2026-01-02T20:02:16.1036960Z   ssh-strict: true
+2026-01-02T20:02:16.1037625Z   ssh-user: git
+2026-01-02T20:02:16.1038328Z   persist-credentials: true
+2026-01-02T20:02:16.1039121Z   clean: true
+2026-01-02T20:02:16.1039833Z   sparse-checkout-cone-mode: true
+2026-01-02T20:02:16.1040634Z   fetch-depth: 1
+2026-01-02T20:02:16.1041581Z   fetch-tags: false
+2026-01-02T20:02:16.1042307Z   show-progress: true
+2026-01-02T20:02:16.1042977Z   lfs: false
+2026-01-02T20:02:16.1043616Z   submodules: false
+2026-01-02T20:02:16.1044374Z   set-safe-directory: true
+2026-01-02T20:02:16.1045540Z ##[endgroup]
+2026-01-02T20:02:16.2821556Z Syncing repository: logando-al/port_pilot
+2026-01-02T20:02:16.2824009Z ##[group]Getting Git version info
+2026-01-02T20:02:16.2825309Z Working directory is 'D:\a\port_pilot\port_pilot'
+2026-01-02T20:02:16.4011164Z [command]"C:\Program Files\Git\bin\git.exe" version
+2026-01-02T20:02:16.8329276Z git version 2.52.0.windows.1
+2026-01-02T20:02:16.8393433Z ##[endgroup]
+2026-01-02T20:02:16.8414012Z Temporarily overriding HOME='D:\a\_temp\bb1dbb01-c1c7-424e-8a06-12281a7bd0a9' before making global git config changes
+2026-01-02T20:02:16.8416041Z Adding repository directory to the temporary git global config as a safe directory
+2026-01-02T20:02:16.8424672Z [command]"C:\Program Files\Git\bin\git.exe" config --global --add safe.directory D:\a\port_pilot\port_pilot
+2026-01-02T20:02:16.9385631Z Deleting the contents of 'D:\a\port_pilot\port_pilot'
+2026-01-02T20:02:16.9391882Z ##[group]Initializing the repository
+2026-01-02T20:02:16.9403001Z [command]"C:\Program Files\Git\bin\git.exe" init D:\a\port_pilot\port_pilot
+2026-01-02T20:02:17.0739359Z Initialized empty Git repository in D:/a/port_pilot/port_pilot/.git/
+2026-01-02T20:02:17.0799493Z [command]"C:\Program Files\Git\bin\git.exe" remote add origin https://github.com/logando-al/port_pilot
+2026-01-02T20:02:17.1487374Z ##[endgroup]
+2026-01-02T20:02:17.1488509Z ##[group]Disabling automatic garbage collection
+2026-01-02T20:02:17.1499763Z [command]"C:\Program Files\Git\bin\git.exe" config --local gc.auto 0
+2026-01-02T20:02:17.1804880Z ##[endgroup]
+2026-01-02T20:02:17.1806469Z ##[group]Setting up auth
+2026-01-02T20:02:17.1820436Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp core\.sshCommand
+2026-01-02T20:02:17.2187959Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :\""
+2026-01-02T20:02:19.0122458Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-01-02T20:02:19.0432782Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :\""
+2026-01-02T20:02:19.6066792Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-01-02T20:02:19.6438930Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "git config --local --show-origin --name-only --get-regexp remote.origin.url"
+2026-01-02T20:02:20.2238563Z [command]"C:\Program Files\Git\bin\git.exe" config --local http.https://github.com/.extraheader "AUTHORIZATION: basic ***"
+2026-01-02T20:02:20.2589234Z ##[endgroup]
+2026-01-02T20:02:20.2590450Z ##[group]Fetching the repository
+2026-01-02T20:02:20.2602787Z [command]"C:\Program Files\Git\bin\git.exe" -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +dd84948d3e6d9ebb55603613ba64ff454c1a019f:refs/remotes/origin/main
+2026-01-02T20:02:21.9548865Z From https://github.com/logando-al/port_pilot
+2026-01-02T20:02:21.9550285Z  * [new ref]         dd84948d3e6d9ebb55603613ba64ff454c1a019f -> origin/main
+2026-01-02T20:02:21.9890281Z ##[endgroup]
+2026-01-02T20:02:21.9890733Z ##[group]Determining the checkout info
+2026-01-02T20:02:21.9893536Z ##[endgroup]
+2026-01-02T20:02:21.9905648Z [command]"C:\Program Files\Git\bin\git.exe" sparse-checkout disable
+2026-01-02T20:02:22.0492840Z [command]"C:\Program Files\Git\bin\git.exe" config --local --unset-all extensions.worktreeConfig
+2026-01-02T20:02:22.0818213Z ##[group]Checking out the ref
+2026-01-02T20:02:22.0828732Z [command]"C:\Program Files\Git\bin\git.exe" checkout --progress --force -B main refs/remotes/origin/main
+2026-01-02T20:02:22.1920378Z branch 'main' set up to track 'origin/main'.
+2026-01-02T20:02:22.1931327Z Switched to a new branch 'main'
+2026-01-02T20:02:22.1976722Z ##[endgroup]
+2026-01-02T20:02:22.2514315Z [command]"C:\Program Files\Git\bin\git.exe" log -1 --format=%H
+2026-01-02T20:02:22.2880183Z dd84948d3e6d9ebb55603613ba64ff454c1a019f
+2026-01-02T20:02:22.3339612Z ##[group]Run actions/setup-python@v5
+2026-01-02T20:02:22.3339959Z with:
+2026-01-02T20:02:22.3340128Z   python-version: 3.13
+2026-01-02T20:02:22.3340340Z   check-latest: false
+2026-01-02T20:02:22.3340718Z   token: ***
+2026-01-02T20:02:22.3340919Z   update-environment: true
+2026-01-02T20:02:22.3341135Z   allow-prereleases: false
+2026-01-02T20:02:22.3341370Z   freethreaded: false
+2026-01-02T20:02:22.3341574Z ##[endgroup]
+2026-01-02T20:02:22.5801144Z ##[group]Installed versions
+2026-01-02T20:02:22.6192469Z Successfully set up CPython (3.13.11)
+2026-01-02T20:02:22.6193338Z ##[endgroup]
+2026-01-02T20:02:22.6587056Z ##[group]Run python -m pip install --upgrade pip
+2026-01-02T20:02:22.6587771Z [36;1mpython -m pip install --upgrade pip[0m
+2026-01-02T20:02:22.6588618Z [36;1mpip install -r requirements.txt[0m
+2026-01-02T20:02:22.6589287Z [36;1mpip install -r requirements-dev.txt[0m
+2026-01-02T20:02:22.8952464Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2026-01-02T20:02:22.8952860Z env:
+2026-01-02T20:02:22.8953146Z   pythonLocation: C:\hostedtoolcache\windows\Python\3.13.11\x64
+2026-01-02T20:02:22.8954214Z   PKG_CONFIG_PATH: C:\hostedtoolcache\windows\Python\3.13.11\x64/lib/pkgconfig
+2026-01-02T20:02:22.8954676Z   Python_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.13.11\x64
+2026-01-02T20:02:22.8955101Z   Python2_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.13.11\x64
+2026-01-02T20:02:22.8955529Z   Python3_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.13.11\x64
+2026-01-02T20:02:22.8955859Z ##[endgroup]
+2026-01-02T20:02:39.4328535Z Requirement already satisfied: pip in c:\hostedtoolcache\windows\python\3.13.11\x64\lib\site-packages (25.3)
+2026-01-02T20:02:42.0540960Z Collecting PyQt6>=6.6.0 (from -r requirements.txt (line 2))
+2026-01-02T20:02:42.3322643Z   Downloading pyqt6-6.10.1-cp39-abi3-win_amd64.whl.metadata (2.2 kB)
+2026-01-02T20:02:42.5649961Z Collecting psutil>=5.9.0 (from -r requirements.txt (line 3))
+2026-01-02T20:02:42.5771879Z   Downloading psutil-7.2.1-cp37-abi3-win_amd64.whl.metadata (23 kB)
+2026-01-02T20:02:42.7649510Z Collecting qtawesome>=1.3.0 (from -r requirements.txt (line 4))
+2026-01-02T20:02:42.7814634Z   Downloading qtawesome-1.4.0-py3-none-any.whl.metadata (11 kB)
+2026-01-02T20:02:42.9423702Z Collecting PyQt6-sip<14,>=13.8 (from PyQt6>=6.6.0->-r requirements.txt (line 2))
+2026-01-02T20:02:42.9670819Z   Downloading pyqt6_sip-13.10.3-cp313-cp313-win_amd64.whl.metadata (516 bytes)
+2026-01-02T20:02:43.0764722Z Collecting PyQt6-Qt6<6.11.0,>=6.10.0 (from PyQt6>=6.6.0->-r requirements.txt (line 2))
+2026-01-02T20:02:43.0927101Z   Downloading pyqt6_qt6-6.10.1-py3-none-win_amd64.whl.metadata (552 bytes)
+2026-01-02T20:02:43.1953331Z Collecting qtpy (from qtawesome>=1.3.0->-r requirements.txt (line 4))
+2026-01-02T20:02:43.2102913Z   Downloading QtPy-2.4.3-py3-none-any.whl.metadata (12 kB)
+2026-01-02T20:02:43.3045612Z Collecting packaging (from qtpy->qtawesome>=1.3.0->-r requirements.txt (line 4))
+2026-01-02T20:02:43.3161818Z   Downloading packaging-25.0-py3-none-any.whl.metadata (3.3 kB)
+2026-01-02T20:02:43.3529510Z Downloading pyqt6-6.10.1-cp39-abi3-win_amd64.whl (26.0 MB)
+2026-01-02T20:02:43.7896211Z    ---------------------------------------- 26.0/26.0 MB 63.4 MB/s  0:00:00
+2026-01-02T20:02:43.8034580Z Downloading pyqt6_qt6-6.10.1-py3-none-win_amd64.whl (76.7 MB)
+2026-01-02T20:02:46.1702332Z    ---------------------------------------- 76.7/76.7 MB 32.4 MB/s  0:00:02
+2026-01-02T20:02:46.1876979Z Downloading pyqt6_sip-13.10.3-cp313-cp313-win_amd64.whl (53 kB)
+2026-01-02T20:02:46.2560934Z Downloading psutil-7.2.1-cp37-abi3-win_amd64.whl (136 kB)
+2026-01-02T20:02:46.3130736Z Downloading qtawesome-1.4.0-py3-none-any.whl (2.6 MB)
+2026-01-02T20:02:46.3606011Z    ---------------------------------------- 2.6/2.6 MB 53.2 MB/s  0:00:00
+2026-01-02T20:02:46.3757781Z Downloading QtPy-2.4.3-py3-none-any.whl (95 kB)
+2026-01-02T20:02:46.4225547Z Downloading packaging-25.0-py3-none-any.whl (66 kB)
+2026-01-02T20:02:46.7115152Z Installing collected packages: PyQt6-Qt6, PyQt6-sip, psutil, packaging, qtpy, PyQt6, qtawesome
+2026-01-02T20:02:57.8900662Z 
+2026-01-02T20:02:57.8920949Z Successfully installed PyQt6-6.10.1 PyQt6-Qt6-6.10.1 PyQt6-sip-13.10.3 packaging-25.0 psutil-7.2.1 qtawesome-1.4.0 qtpy-2.4.3
+2026-01-02T20:02:59.6117319Z Collecting pytest>=8.0.0 (from -r requirements-dev.txt (line 2))
+2026-01-02T20:02:59.8840951Z   Downloading pytest-9.0.2-py3-none-any.whl.metadata (7.6 kB)
+2026-01-02T20:02:59.9934277Z Collecting pytest-cov>=4.0.0 (from -r requirements-dev.txt (line 3))
+2026-01-02T20:03:00.0051839Z   Downloading pytest_cov-7.0.0-py3-none-any.whl.metadata (31 kB)
+2026-01-02T20:03:00.2365705Z Collecting pytest-qt>=4.3.0 (from -r requirements-dev.txt (line 4))
+2026-01-02T20:03:00.2547439Z   Downloading pytest_qt-4.5.0-py3-none-any.whl.metadata (7.9 kB)
+2026-01-02T20:03:00.7808319Z Collecting ruff>=0.1.0 (from -r requirements-dev.txt (line 5))
+2026-01-02T20:03:00.7945119Z   Downloading ruff-0.14.10-py3-none-win_amd64.whl.metadata (26 kB)
+2026-01-02T20:03:01.0130624Z Collecting mypy>=1.8.0 (from -r requirements-dev.txt (line 6))
+2026-01-02T20:03:01.0384002Z   Downloading mypy-1.19.1-cp313-cp313-win_amd64.whl.metadata (2.3 kB)
+2026-01-02T20:03:01.2116894Z Collecting pyinstaller>=6.0.0 (from -r requirements-dev.txt (line 7))
+2026-01-02T20:03:01.2234962Z   Downloading pyinstaller-6.17.0-py3-none-win_amd64.whl.metadata (8.5 kB)
+2026-01-02T20:03:01.3437681Z Collecting colorama>=0.4 (from pytest>=8.0.0->-r requirements-dev.txt (line 2))
+2026-01-02T20:03:01.3656061Z   Downloading colorama-0.4.6-py2.py3-none-any.whl.metadata (17 kB)
+2026-01-02T20:03:01.4970763Z Collecting iniconfig>=1.0.1 (from pytest>=8.0.0->-r requirements-dev.txt (line 2))
+2026-01-02T20:03:01.5115177Z   Downloading iniconfig-2.3.0-py3-none-any.whl.metadata (2.5 kB)
+2026-01-02T20:03:01.5628963Z Requirement already satisfied: packaging>=22 in c:\hostedtoolcache\windows\python\3.13.11\x64\lib\site-packages (from pytest>=8.0.0->-r requirements-dev.txt (line 2)) (25.0)
+2026-01-02T20:03:01.6256868Z Collecting pluggy<2,>=1.5 (from pytest>=8.0.0->-r requirements-dev.txt (line 2))
+2026-01-02T20:03:01.6369224Z   Downloading pluggy-1.6.0-py3-none-any.whl.metadata (4.8 kB)
+2026-01-02T20:03:01.7925852Z Collecting pygments>=2.7.2 (from pytest>=8.0.0->-r requirements-dev.txt (line 2))
+2026-01-02T20:03:01.8065973Z   Downloading pygments-2.19.2-py3-none-any.whl.metadata (2.5 kB)
+2026-01-02T20:03:02.2902331Z Collecting coverage>=7.10.6 (from coverage[toml]>=7.10.6->pytest-cov>=4.0.0->-r requirements-dev.txt (line 3))
+2026-01-02T20:03:02.3053292Z   Downloading coverage-7.13.1-cp313-cp313-win_amd64.whl.metadata (8.7 kB)
+2026-01-02T20:03:02.4166512Z Collecting typing_extensions (from pytest-qt>=4.3.0->-r requirements-dev.txt (line 4))
+2026-01-02T20:03:02.4283767Z   Downloading typing_extensions-4.15.0-py3-none-any.whl.metadata (3.3 kB)
+2026-01-02T20:03:02.5705071Z Collecting mypy_extensions>=1.0.0 (from mypy>=1.8.0->-r requirements-dev.txt (line 6))
+2026-01-02T20:03:02.5883774Z   Downloading mypy_extensions-1.1.0-py3-none-any.whl.metadata (1.1 kB)
+2026-01-02T20:03:02.6721347Z Collecting pathspec>=0.9.0 (from mypy>=1.8.0->-r requirements-dev.txt (line 6))
+2026-01-02T20:03:02.7084064Z   Downloading pathspec-0.12.1-py3-none-any.whl.metadata (21 kB)
+2026-01-02T20:03:02.9047147Z Collecting librt>=0.6.2 (from mypy>=1.8.0->-r requirements-dev.txt (line 6))
+2026-01-02T20:03:02.9174616Z   Downloading librt-0.7.7-cp313-cp313-win_amd64.whl.metadata (1.4 kB)
+2026-01-02T20:03:03.1166113Z Collecting altgraph (from pyinstaller>=6.0.0->-r requirements-dev.txt (line 7))
+2026-01-02T20:03:03.1520045Z   Downloading altgraph-0.17.5-py2.py3-none-any.whl.metadata (7.5 kB)
+2026-01-02T20:03:03.2877635Z Collecting pefile>=2022.5.30 (from pyinstaller>=6.0.0->-r requirements-dev.txt (line 7))
+2026-01-02T20:03:03.2998952Z   Downloading pefile-2024.8.26-py3-none-any.whl.metadata (1.4 kB)
+2026-01-02T20:03:03.5137005Z Collecting pyinstaller-hooks-contrib>=2025.9 (from pyinstaller>=6.0.0->-r requirements-dev.txt (line 7))
+2026-01-02T20:03:03.5603838Z   Downloading pyinstaller_hooks_contrib-2025.11-py3-none-any.whl.metadata (16 kB)
+2026-01-02T20:03:03.7110074Z Collecting pywin32-ctypes>=0.2.1 (from pyinstaller>=6.0.0->-r requirements-dev.txt (line 7))
+2026-01-02T20:03:03.7224874Z   Downloading pywin32_ctypes-0.2.3-py3-none-any.whl.metadata (3.9 kB)
+2026-01-02T20:03:03.9335225Z Collecting setuptools>=42.0.0 (from pyinstaller>=6.0.0->-r requirements-dev.txt (line 7))
+2026-01-02T20:03:03.9743920Z   Downloading setuptools-80.9.0-py3-none-any.whl.metadata (6.6 kB)
+2026-01-02T20:03:04.0776009Z Downloading pytest-9.0.2-py3-none-any.whl (374 kB)
+2026-01-02T20:03:04.2642792Z Downloading pluggy-1.6.0-py3-none-any.whl (20 kB)
+2026-01-02T20:03:04.3416320Z Downloading pytest_cov-7.0.0-py3-none-any.whl (22 kB)
+2026-01-02T20:03:04.4174320Z Downloading pytest_qt-4.5.0-py3-none-any.whl (37 kB)
+2026-01-02T20:03:04.4832714Z Downloading ruff-0.14.10-py3-none-win_amd64.whl (14.7 MB)
+2026-01-02T20:03:05.4976611Z    ---------------------------------------- 14.7/14.7 MB 14.7 MB/s  0:00:01
+2026-01-02T20:03:05.5131015Z Downloading mypy-1.19.1-cp313-cp313-win_amd64.whl (10.1 MB)
+2026-01-02T20:03:05.6795314Z    ---------------------------------------- 10.1/10.1 MB 60.8 MB/s  0:00:00
+2026-01-02T20:03:05.7021319Z Downloading pyinstaller-6.17.0-py3-none-win_amd64.whl (1.4 MB)
+2026-01-02T20:03:05.7641440Z    ---------------------------------------- 1.4/1.4 MB 19.1 MB/s  0:00:00
+2026-01-02T20:03:05.7752579Z Downloading colorama-0.4.6-py2.py3-none-any.whl (25 kB)
+2026-01-02T20:03:05.8454610Z Downloading coverage-7.13.1-cp313-cp313-win_amd64.whl (222 kB)
+2026-01-02T20:03:05.9306300Z Downloading iniconfig-2.3.0-py3-none-any.whl (7.5 kB)
+2026-01-02T20:03:06.0066196Z Downloading librt-0.7.7-cp313-cp313-win_amd64.whl (49 kB)
+2026-01-02T20:03:06.0497901Z Downloading mypy_extensions-1.1.0-py3-none-any.whl (5.0 kB)
+2026-01-02T20:03:06.1044435Z Downloading pathspec-0.12.1-py3-none-any.whl (31 kB)
+2026-01-02T20:03:06.1685837Z Downloading pefile-2024.8.26-py3-none-any.whl (74 kB)
+2026-01-02T20:03:06.2420923Z Downloading pygments-2.19.2-py3-none-any.whl (1.2 MB)
+2026-01-02T20:03:06.3058343Z    ---------------------------------------- 1.2/1.2 MB 15.9 MB/s  0:00:00
+2026-01-02T20:03:06.3309026Z Downloading pyinstaller_hooks_contrib-2025.11-py3-none-any.whl (449 kB)
+2026-01-02T20:03:06.3706724Z Downloading pywin32_ctypes-0.2.3-py3-none-any.whl (30 kB)
+2026-01-02T20:03:06.4434356Z Downloading setuptools-80.9.0-py3-none-any.whl (1.2 MB)
+2026-01-02T20:03:06.5245164Z    ---------------------------------------- 1.2/1.2 MB 12.0 MB/s  0:00:00
+2026-01-02T20:03:06.5356000Z Downloading typing_extensions-4.15.0-py3-none-any.whl (44 kB)
+2026-01-02T20:03:06.5980583Z Downloading altgraph-0.17.5-py2.py3-none-any.whl (21 kB)
+2026-01-02T20:03:06.8328195Z Installing collected packages: altgraph, typing_extensions, setuptools, ruff, pywin32-ctypes, pygments, pluggy, pefile, pathspec, mypy_extensions, librt, iniconfig, coverage, colorama, pytest, pyinstaller-hooks-contrib, mypy, pytest-qt, pytest-cov, pyinstaller
+2026-01-02T20:03:22.3715009Z 
+2026-01-02T20:03:22.3751393Z Successfully installed altgraph-0.17.5 colorama-0.4.6 coverage-7.13.1 iniconfig-2.3.0 librt-0.7.7 mypy-1.19.1 mypy_extensions-1.1.0 pathspec-0.12.1 pefile-2024.8.26 pluggy-1.6.0 pygments-2.19.2 pyinstaller-6.17.0 pyinstaller-hooks-contrib-2025.11 pytest-9.0.2 pytest-cov-7.0.0 pytest-qt-4.5.0 pywin32-ctypes-0.2.3 ruff-0.14.10 setuptools-80.9.0 typing_extensions-4.15.0
+2026-01-02T20:03:23.4804569Z ##[group]Run pytest tests/ -v --cov=src --cov-report=xml
+2026-01-02T20:03:23.4805013Z [36;1mpytest tests/ -v --cov=src --cov-report=xml[0m
+2026-01-02T20:03:23.4880701Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2026-01-02T20:03:23.4881007Z env:
+2026-01-02T20:03:23.4881262Z   pythonLocation: C:\hostedtoolcache\windows\Python\3.13.11\x64
+2026-01-02T20:03:23.4881658Z   PKG_CONFIG_PATH: C:\hostedtoolcache\windows\Python\3.13.11\x64/lib/pkgconfig
+2026-01-02T20:03:23.4882055Z   Python_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.13.11\x64
+2026-01-02T20:03:23.4882402Z   Python2_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.13.11\x64
+2026-01-02T20:03:23.4882740Z   Python3_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.13.11\x64
+2026-01-02T20:03:23.4883026Z   QT_QPA_PLATFORM: offscreen
+2026-01-02T20:03:23.4883222Z ##[endgroup]
+2026-01-02T20:03:26.0240923Z ============================= test session starts =============================
+2026-01-02T20:03:26.0242060Z platform win32 -- Python 3.13.11, pytest-9.0.2, pluggy-1.6.0 -- C:\hostedtoolcache\windows\Python\3.13.11\x64\python.exe
+2026-01-02T20:03:26.0242656Z cachedir: .pytest_cache
+2026-01-02T20:03:26.0242985Z PyQt6 6.10.1 -- Qt runtime 6.10.1 -- Qt compiled 6.10.0
+2026-01-02T20:03:26.0243367Z rootdir: D:\a\port_pilot\port_pilot
+2026-01-02T20:03:26.0243699Z configfile: pyproject.toml
+2026-01-02T20:03:26.0244316Z plugins: cov-7.0.0, qt-4.5.0
+2026-01-02T20:03:26.7445017Z collecting ... collected 4 items / 3 errors
+2026-01-02T20:03:26.7445384Z 
+2026-01-02T20:03:26.7445877Z =================================== ERRORS ====================================
+2026-01-02T20:03:26.7446966Z ______________ ERROR collecting tests/unit/test_port_scanner.py _______________
+2026-01-02T20:03:26.7447880Z ImportError while importing test module 'D:\a\port_pilot\port_pilot\tests\unit\test_port_scanner.py'.
+2026-01-02T20:03:26.7448644Z Hint: make sure your test modules/packages have valid Python names.
+2026-01-02T20:03:26.7449139Z Traceback:
+2026-01-02T20:03:26.7449725Z C:\hostedtoolcache\windows\Python\3.13.11\x64\Lib\site-packages\_pytest\python.py:507: in importtestmodule
+2026-01-02T20:03:26.7450398Z     mod = import_path(
+2026-01-02T20:03:26.7451009Z C:\hostedtoolcache\windows\Python\3.13.11\x64\Lib\site-packages\_pytest\pathlib.py:587: in import_path
+2026-01-02T20:03:26.7451725Z     importlib.import_module(module_name)
+2026-01-02T20:03:26.7452371Z C:\hostedtoolcache\windows\Python\3.13.11\x64\Lib\importlib\__init__.py:88: in import_module
+2026-01-02T20:03:26.7453117Z     return _bootstrap._gcd_import(name[level:], package, level)
+2026-01-02T20:03:26.7453620Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-01-02T20:03:26.7454390Z <frozen importlib._bootstrap>:1387: in _gcd_import
+2026-01-02T20:03:26.7454812Z     ???
+2026-01-02T20:03:26.7455114Z <frozen importlib._bootstrap>:1360: in _find_and_load
+2026-01-02T20:03:26.7455550Z     ???
+2026-01-02T20:03:26.7456087Z <frozen importlib._bootstrap>:1331: in _find_and_load_unlocked
+2026-01-02T20:03:26.7457343Z     ???
+2026-01-02T20:03:26.7457833Z <frozen importlib._bootstrap>:935: in _load_unlocked
+2026-01-02T20:03:26.7458449Z     ???
+2026-01-02T20:03:26.7459739Z C:\hostedtoolcache\windows\Python\3.13.11\x64\Lib\site-packages\_pytest\assertion\rewrite.py:197: in exec_module
+2026-01-02T20:03:26.7461813Z     exec(co, module.__dict__)
+2026-01-02T20:03:26.7462414Z tests\unit\test_port_scanner.py:7: in <module>
+2026-01-02T20:03:26.7463224Z     from src.core.port_scanner import PortInfo, PortScanner
+2026-01-02T20:03:26.7464004Z E   ModuleNotFoundError: No module named 'src'
+2026-01-02T20:03:26.7465263Z _____________ ERROR collecting tests/unit/test_process_killer.py ______________
+2026-01-02T20:03:26.7466186Z ImportError while importing test module 'D:\a\port_pilot\port_pilot\tests\unit\test_process_killer.py'.
+2026-01-02T20:03:26.7467019Z Hint: make sure your test modules/packages have valid Python names.
+2026-01-02T20:03:26.7471282Z Traceback:
+2026-01-02T20:03:26.7472055Z C:\hostedtoolcache\windows\Python\3.13.11\x64\Lib\site-packages\_pytest\python.py:507: in importtestmodule
+2026-01-02T20:03:26.7472691Z     mod = import_path(
+2026-01-02T20:03:26.7473295Z C:\hostedtoolcache\windows\Python\3.13.11\x64\Lib\site-packages\_pytest\pathlib.py:587: in import_path
+2026-01-02T20:03:26.7474091Z     importlib.import_module(module_name)
+2026-01-02T20:03:26.7474731Z C:\hostedtoolcache\windows\Python\3.13.11\x64\Lib\importlib\__init__.py:88: in import_module
+2026-01-02T20:03:26.7475473Z     return _bootstrap._gcd_import(name[level:], package, level)
+2026-01-02T20:03:26.7475963Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-01-02T20:03:26.7476394Z <frozen importlib._bootstrap>:1387: in _gcd_import
+2026-01-02T20:03:26.7476775Z     ???
+2026-01-02T20:03:26.7477644Z <frozen importlib._bootstrap>:1360: in _find_and_load
+2026-01-02T20:03:26.7478316Z     ???
+2026-01-02T20:03:26.7478679Z <frozen importlib._bootstrap>:1331: in _find_and_load_unlocked
+2026-01-02T20:03:26.7479120Z     ???
+2026-01-02T20:03:26.7479399Z <frozen importlib._bootstrap>:935: in _load_unlocked
+2026-01-02T20:03:26.7479796Z     ???
+2026-01-02T20:03:26.7480346Z C:\hostedtoolcache\windows\Python\3.13.11\x64\Lib\site-packages\_pytest\assertion\rewrite.py:197: in exec_module
+2026-01-02T20:03:26.7481047Z     exec(co, module.__dict__)
+2026-01-02T20:03:26.7481452Z tests\unit\test_process_killer.py:7: in <module>
+2026-01-02T20:03:26.7482385Z     from src.core.process_killer import KillResult, ProcessKiller
+2026-01-02T20:03:26.7482893Z E   ModuleNotFoundError: No module named 'src'
+2026-01-02T20:03:26.7483425Z _____________ ERROR collecting tests/unit/test_tunnel_manager.py ______________
+2026-01-02T20:03:26.7484243Z ImportError while importing test module 'D:\a\port_pilot\port_pilot\tests\unit\test_tunnel_manager.py'.
+2026-01-02T20:03:26.7486153Z Hint: make sure your test modules/packages have valid Python names.
+2026-01-02T20:03:26.7486859Z Traceback:
+2026-01-02T20:03:26.7487600Z C:\hostedtoolcache\windows\Python\3.13.11\x64\Lib\site-packages\_pytest\python.py:507: in importtestmodule
+2026-01-02T20:03:26.7488419Z     mod = import_path(
+2026-01-02T20:03:26.7489155Z C:\hostedtoolcache\windows\Python\3.13.11\x64\Lib\site-packages\_pytest\pathlib.py:587: in import_path
+2026-01-02T20:03:26.7489966Z     importlib.import_module(module_name)
+2026-01-02T20:03:26.7490657Z C:\hostedtoolcache\windows\Python\3.13.11\x64\Lib\importlib\__init__.py:88: in import_module
+2026-01-02T20:03:26.7491854Z     return _bootstrap._gcd_import(name[level:], package, level)
+2026-01-02T20:03:26.7492443Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-01-02T20:03:26.7492935Z <frozen importlib._bootstrap>:1387: in _gcd_import
+2026-01-02T20:03:26.7493395Z     ???
+2026-01-02T20:03:26.7493767Z <frozen importlib._bootstrap>:1360: in _find_and_load
+2026-01-02T20:03:26.7494225Z     ???
+2026-01-02T20:03:26.7494674Z <frozen importlib._bootstrap>:1331: in _find_and_load_unlocked
+2026-01-02T20:03:26.7495234Z     ???
+2026-01-02T20:03:26.7495606Z <frozen importlib._bootstrap>:935: in _load_unlocked
+2026-01-02T20:03:26.7496086Z     ???
+2026-01-02T20:03:26.7497120Z C:\hostedtoolcache\windows\Python\3.13.11\x64\Lib\site-packages\_pytest\assertion\rewrite.py:197: in exec_module
+2026-01-02T20:03:26.7497997Z     exec(co, module.__dict__)
+2026-01-02T20:03:26.7498444Z tests\unit\test_tunnel_manager.py:7: in <module>
+2026-01-02T20:03:26.7499134Z     from src.core.tunnel_manager import TunnelConfig, TunnelManager, TunnelStatus
+2026-01-02T20:03:26.7499864Z E   ModuleNotFoundError: No module named 'src'
+2026-01-02T20:03:26.7500403Z =========================== short test summary info ===========================
+2026-01-02T20:03:26.7500948Z ERROR tests/unit/test_port_scanner.py
+2026-01-02T20:03:26.7501433Z ERROR tests/unit/test_process_killer.py
+2026-01-02T20:03:26.7501927Z ERROR tests/unit/test_tunnel_manager.py
+2026-01-02T20:03:26.7503715Z !!!!!!!!!!!!!!!!!!! Interrupted: 3 errors during collection !!!!!!!!!!!!!!!!!!!
+2026-01-02T20:03:26.7504447Z ============================== 3 errors in 0.70s ==============================
+2026-01-02T20:03:26.9354045Z ##[error]Process completed with exit code 1.
+2026-01-02T20:03:26.9589466Z Post job cleanup.
+2026-01-02T20:03:27.2056742Z [command]"C:\Program Files\Git\bin\git.exe" version
+2026-01-02T20:03:27.2372506Z git version 2.52.0.windows.1
+2026-01-02T20:03:27.2459012Z Temporarily overriding HOME='D:\a\_temp\2d101f91-ab12-4a7a-8d91-2873ba3c3acc' before making global git config changes
+2026-01-02T20:03:27.2460116Z Adding repository directory to the temporary git global config as a safe directory
+2026-01-02T20:03:27.2471694Z [command]"C:\Program Files\Git\bin\git.exe" config --global --add safe.directory D:\a\port_pilot\port_pilot
+2026-01-02T20:03:27.2806111Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp core\.sshCommand
+2026-01-02T20:03:27.3134662Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :\""
+2026-01-02T20:03:27.8743968Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-01-02T20:03:27.9032017Z http.https://github.com/.extraheader
+2026-01-02T20:03:27.9083564Z [command]"C:\Program Files\Git\bin\git.exe" config --local --unset-all http.https://github.com/.extraheader
+2026-01-02T20:03:27.9433200Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :\""
+2026-01-02T20:03:28.5190866Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-01-02T20:03:28.5502825Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "git config --local --show-origin --name-only --get-regexp remote.origin.url"
+2026-01-02T20:03:29.1670093Z Cleaning up orphan processes

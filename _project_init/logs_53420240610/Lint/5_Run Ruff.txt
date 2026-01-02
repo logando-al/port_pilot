@@ -1,0 +1,16 @@
+﻿2026-01-02T20:02:20.5373077Z ##[group]Run ruff check src/ tests/
+2026-01-02T20:02:20.5373410Z [36;1mruff check src/ tests/[0m
+2026-01-02T20:02:20.5408390Z shell: /usr/bin/bash -e {0}
+2026-01-02T20:02:20.5408635Z env:
+2026-01-02T20:02:20.5408872Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.11/x64
+2026-01-02T20:02:20.5409311Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.11/x64/lib/pkgconfig
+2026-01-02T20:02:20.5409727Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.11/x64
+2026-01-02T20:02:20.5410101Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.11/x64
+2026-01-02T20:02:20.5410441Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.11/x64
+2026-01-02T20:02:20.5410793Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.11/x64/lib
+2026-01-02T20:02:20.5411334Z ##[endgroup]
+2026-01-02T20:02:20.5500939Z warning: The top-level linter settings are deprecated in favour of their counterparts in the `lint` section. Please update the following options in `pyproject.toml`:
+2026-01-02T20:02:20.5501768Z   - 'ignore' -> 'lint.ignore'
+2026-01-02T20:02:20.5502260Z   - 'select' -> 'lint.select'
+2026-01-02T20:02:20.5502568Z   - 'per-file-ignores' -> 'lint.per-file-ignores'
+2026-01-02T20:02:20.5577681Z All checks passed!

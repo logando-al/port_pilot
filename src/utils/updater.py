@@ -131,6 +131,6 @@ class Updater:
             name = asset.get("name", "").lower()
             for pattern in patterns:
                 if pattern.lower() in name:
-                    return asset.get("browser_download_url")
+                    return str(asset.get("browser_download_url"))
 
         return None

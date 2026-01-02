@@ -1,0 +1,32 @@
+﻿2026-01-02T20:02:13.0912296Z Current runner version: '2.330.0'
+2026-01-02T20:02:13.0943559Z ##[group]Runner Image Provisioner
+2026-01-02T20:02:13.0944730Z Hosted Compute Agent
+2026-01-02T20:02:13.0945379Z Version: 20251211.462
+2026-01-02T20:02:13.0945948Z Commit: 6cbad8c2bb55d58165063d031ccabf57e2d2db61
+2026-01-02T20:02:13.0946593Z Build Date: 2025-12-11T16:28:49Z
+2026-01-02T20:02:13.0947144Z Worker ID: {671fea7a-8f3f-4506-80c1-ea30841b7be4}
+2026-01-02T20:02:13.0947765Z ##[endgroup]
+2026-01-02T20:02:13.0948216Z ##[group]Operating System
+2026-01-02T20:02:13.0948736Z Ubuntu
+2026-01-02T20:02:13.0949126Z 24.04.3
+2026-01-02T20:02:13.0949551Z LTS
+2026-01-02T20:02:13.0949937Z ##[endgroup]
+2026-01-02T20:02:13.0950392Z ##[group]Runner Image
+2026-01-02T20:02:13.0950875Z Image: ubuntu-24.04
+2026-01-02T20:02:13.0951318Z Version: 20251215.174.1
+2026-01-02T20:02:13.0952423Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20251215.174/images/ubuntu/Ubuntu2404-Readme.md
+2026-01-02T20:02:13.0953598Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20251215.174
+2026-01-02T20:02:13.0954686Z ##[endgroup]
+2026-01-02T20:02:13.0955641Z ##[group]GITHUB_TOKEN Permissions
+2026-01-02T20:02:13.0957405Z Contents: read
+2026-01-02T20:02:13.0957873Z Metadata: read
+2026-01-02T20:02:13.0958350Z Packages: read
+2026-01-02T20:02:13.0958808Z ##[endgroup]
+2026-01-02T20:02:13.0960595Z Secret source: Actions
+2026-01-02T20:02:13.0961281Z Prepare workflow directory
+2026-01-02T20:02:13.1335742Z Prepare all required actions
+2026-01-02T20:02:13.1390247Z Getting action download info
+2026-01-02T20:02:13.4828414Z Download action repository 'actions/checkout@v4' (SHA:34e114876b0b11c390a56381ad16ebd13914f8d5)
+2026-01-02T20:02:13.5471267Z Download action repository 'actions/setup-python@v5' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+2026-01-02T20:02:13.6136618Z Download action repository 'codecov/codecov-action@v4' (SHA:b9fd7d16f6d7d1b5d2bec1a2887e65ceed900238)
+2026-01-02T20:02:14.0529719Z Complete job name: Test (ubuntu-latest)

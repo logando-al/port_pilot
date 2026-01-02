@@ -1,0 +1,100 @@
+﻿2026-01-02T20:03:23.4804542Z ##[group]Run pytest tests/ -v --cov=src --cov-report=xml
+2026-01-02T20:03:23.4805010Z [36;1mpytest tests/ -v --cov=src --cov-report=xml[0m
+2026-01-02T20:03:23.4880685Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2026-01-02T20:03:23.4881003Z env:
+2026-01-02T20:03:23.4881259Z   pythonLocation: C:\hostedtoolcache\windows\Python\3.13.11\x64
+2026-01-02T20:03:23.4881654Z   PKG_CONFIG_PATH: C:\hostedtoolcache\windows\Python\3.13.11\x64/lib/pkgconfig
+2026-01-02T20:03:23.4882052Z   Python_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.13.11\x64
+2026-01-02T20:03:23.4882399Z   Python2_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.13.11\x64
+2026-01-02T20:03:23.4882730Z   Python3_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.13.11\x64
+2026-01-02T20:03:23.4883023Z   QT_QPA_PLATFORM: offscreen
+2026-01-02T20:03:23.4883219Z ##[endgroup]
+2026-01-02T20:03:26.0240884Z ============================= test session starts =============================
+2026-01-02T20:03:26.0241801Z platform win32 -- Python 3.13.11, pytest-9.0.2, pluggy-1.6.0 -- C:\hostedtoolcache\windows\Python\3.13.11\x64\python.exe
+2026-01-02T20:03:26.0242652Z cachedir: .pytest_cache
+2026-01-02T20:03:26.0242981Z PyQt6 6.10.1 -- Qt runtime 6.10.1 -- Qt compiled 6.10.0
+2026-01-02T20:03:26.0243364Z rootdir: D:\a\port_pilot\port_pilot
+2026-01-02T20:03:26.0243696Z configfile: pyproject.toml
+2026-01-02T20:03:26.0244311Z plugins: cov-7.0.0, qt-4.5.0
+2026-01-02T20:03:26.7444978Z collecting ... collected 4 items / 3 errors
+2026-01-02T20:03:26.7445379Z 
+2026-01-02T20:03:26.7445835Z =================================== ERRORS ====================================
+2026-01-02T20:03:26.7446955Z ______________ ERROR collecting tests/unit/test_port_scanner.py _______________
+2026-01-02T20:03:26.7447863Z ImportError while importing test module 'D:\a\port_pilot\port_pilot\tests\unit\test_port_scanner.py'.
+2026-01-02T20:03:26.7448638Z Hint: make sure your test modules/packages have valid Python names.
+2026-01-02T20:03:26.7449106Z Traceback:
+2026-01-02T20:03:26.7449720Z C:\hostedtoolcache\windows\Python\3.13.11\x64\Lib\site-packages\_pytest\python.py:507: in importtestmodule
+2026-01-02T20:03:26.7450392Z     mod = import_path(
+2026-01-02T20:03:26.7451004Z C:\hostedtoolcache\windows\Python\3.13.11\x64\Lib\site-packages\_pytest\pathlib.py:587: in import_path
+2026-01-02T20:03:26.7451721Z     importlib.import_module(module_name)
+2026-01-02T20:03:26.7452365Z C:\hostedtoolcache\windows\Python\3.13.11\x64\Lib\importlib\__init__.py:88: in import_module
+2026-01-02T20:03:26.7453111Z     return _bootstrap._gcd_import(name[level:], package, level)
+2026-01-02T20:03:26.7453616Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-01-02T20:03:26.7454379Z <frozen importlib._bootstrap>:1387: in _gcd_import
+2026-01-02T20:03:26.7454808Z     ???
+2026-01-02T20:03:26.7455110Z <frozen importlib._bootstrap>:1360: in _find_and_load
+2026-01-02T20:03:26.7455546Z     ???
+2026-01-02T20:03:26.7456060Z <frozen importlib._bootstrap>:1331: in _find_and_load_unlocked
+2026-01-02T20:03:26.7457335Z     ???
+2026-01-02T20:03:26.7457830Z <frozen importlib._bootstrap>:935: in _load_unlocked
+2026-01-02T20:03:26.7458445Z     ???
+2026-01-02T20:03:26.7459727Z C:\hostedtoolcache\windows\Python\3.13.11\x64\Lib\site-packages\_pytest\assertion\rewrite.py:197: in exec_module
+2026-01-02T20:03:26.7461801Z     exec(co, module.__dict__)
+2026-01-02T20:03:26.7462406Z tests\unit\test_port_scanner.py:7: in <module>
+2026-01-02T20:03:26.7463219Z     from src.core.port_scanner import PortInfo, PortScanner
+2026-01-02T20:03:26.7464000Z E   ModuleNotFoundError: No module named 'src'
+2026-01-02T20:03:26.7465250Z _____________ ERROR collecting tests/unit/test_process_killer.py ______________
+2026-01-02T20:03:26.7466181Z ImportError while importing test module 'D:\a\port_pilot\port_pilot\tests\unit\test_process_killer.py'.
+2026-01-02T20:03:26.7467015Z Hint: make sure your test modules/packages have valid Python names.
+2026-01-02T20:03:26.7467476Z Traceback:
+2026-01-02T20:03:26.7472047Z C:\hostedtoolcache\windows\Python\3.13.11\x64\Lib\site-packages\_pytest\python.py:507: in importtestmodule
+2026-01-02T20:03:26.7472686Z     mod = import_path(
+2026-01-02T20:03:26.7473290Z C:\hostedtoolcache\windows\Python\3.13.11\x64\Lib\site-packages\_pytest\pathlib.py:587: in import_path
+2026-01-02T20:03:26.7474084Z     importlib.import_module(module_name)
+2026-01-02T20:03:26.7474726Z C:\hostedtoolcache\windows\Python\3.13.11\x64\Lib\importlib\__init__.py:88: in import_module
+2026-01-02T20:03:26.7475469Z     return _bootstrap._gcd_import(name[level:], package, level)
+2026-01-02T20:03:26.7475960Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-01-02T20:03:26.7476389Z <frozen importlib._bootstrap>:1387: in _gcd_import
+2026-01-02T20:03:26.7476772Z     ???
+2026-01-02T20:03:26.7477636Z <frozen importlib._bootstrap>:1360: in _find_and_load
+2026-01-02T20:03:26.7478309Z     ???
+2026-01-02T20:03:26.7478659Z <frozen importlib._bootstrap>:1331: in _find_and_load_unlocked
+2026-01-02T20:03:26.7479117Z     ???
+2026-01-02T20:03:26.7479397Z <frozen importlib._bootstrap>:935: in _load_unlocked
+2026-01-02T20:03:26.7479794Z     ???
+2026-01-02T20:03:26.7480342Z C:\hostedtoolcache\windows\Python\3.13.11\x64\Lib\site-packages\_pytest\assertion\rewrite.py:197: in exec_module
+2026-01-02T20:03:26.7481042Z     exec(co, module.__dict__)
+2026-01-02T20:03:26.7481449Z tests\unit\test_process_killer.py:7: in <module>
+2026-01-02T20:03:26.7482378Z     from src.core.process_killer import KillResult, ProcessKiller
+2026-01-02T20:03:26.7482890Z E   ModuleNotFoundError: No module named 'src'
+2026-01-02T20:03:26.7483421Z _____________ ERROR collecting tests/unit/test_tunnel_manager.py ______________
+2026-01-02T20:03:26.7484238Z ImportError while importing test module 'D:\a\port_pilot\port_pilot\tests\unit\test_tunnel_manager.py'.
+2026-01-02T20:03:26.7486130Z Hint: make sure your test modules/packages have valid Python names.
+2026-01-02T20:03:26.7486852Z Traceback:
+2026-01-02T20:03:26.7487581Z C:\hostedtoolcache\windows\Python\3.13.11\x64\Lib\site-packages\_pytest\python.py:507: in importtestmodule
+2026-01-02T20:03:26.7488414Z     mod = import_path(
+2026-01-02T20:03:26.7489150Z C:\hostedtoolcache\windows\Python\3.13.11\x64\Lib\site-packages\_pytest\pathlib.py:587: in import_path
+2026-01-02T20:03:26.7489961Z     importlib.import_module(module_name)
+2026-01-02T20:03:26.7490651Z C:\hostedtoolcache\windows\Python\3.13.11\x64\Lib\importlib\__init__.py:88: in import_module
+2026-01-02T20:03:26.7491843Z     return _bootstrap._gcd_import(name[level:], package, level)
+2026-01-02T20:03:26.7492438Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-01-02T20:03:26.7492931Z <frozen importlib._bootstrap>:1387: in _gcd_import
+2026-01-02T20:03:26.7493391Z     ???
+2026-01-02T20:03:26.7493764Z <frozen importlib._bootstrap>:1360: in _find_and_load
+2026-01-02T20:03:26.7494222Z     ???
+2026-01-02T20:03:26.7494659Z <frozen importlib._bootstrap>:1331: in _find_and_load_unlocked
+2026-01-02T20:03:26.7495230Z     ???
+2026-01-02T20:03:26.7495602Z <frozen importlib._bootstrap>:935: in _load_unlocked
+2026-01-02T20:03:26.7496082Z     ???
+2026-01-02T20:03:26.7497109Z C:\hostedtoolcache\windows\Python\3.13.11\x64\Lib\site-packages\_pytest\assertion\rewrite.py:197: in exec_module
+2026-01-02T20:03:26.7497992Z     exec(co, module.__dict__)
+2026-01-02T20:03:26.7498440Z tests\unit\test_tunnel_manager.py:7: in <module>
+2026-01-02T20:03:26.7499128Z     from src.core.tunnel_manager import TunnelConfig, TunnelManager, TunnelStatus
+2026-01-02T20:03:26.7499860Z E   ModuleNotFoundError: No module named 'src'
+2026-01-02T20:03:26.7500400Z =========================== short test summary info ===========================
+2026-01-02T20:03:26.7500943Z ERROR tests/unit/test_port_scanner.py
+2026-01-02T20:03:26.7501430Z ERROR tests/unit/test_process_killer.py
+2026-01-02T20:03:26.7501923Z ERROR tests/unit/test_tunnel_manager.py
+2026-01-02T20:03:26.7502515Z !!!!!!!!!!!!!!!!!!! Interrupted: 3 errors during collection !!!!!!!!!!!!!!!!!!!
+2026-01-02T20:03:26.7504442Z ============================== 3 errors in 0.70s ==============================
+2026-01-02T20:03:26.9354014Z ##[error]Process completed with exit code 1.

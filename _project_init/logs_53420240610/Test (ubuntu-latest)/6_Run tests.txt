@@ -1,0 +1,38 @@
+﻿2026-01-02T20:02:38.7042806Z ##[group]Run pytest tests/ -v --cov=src --cov-report=xml
+2026-01-02T20:02:38.7043205Z [36;1mpytest tests/ -v --cov=src --cov-report=xml[0m
+2026-01-02T20:02:38.7066151Z shell: /usr/bin/bash -e {0}
+2026-01-02T20:02:38.7066406Z env:
+2026-01-02T20:02:38.7066654Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.11/x64
+2026-01-02T20:02:38.7067041Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.11/x64/lib/pkgconfig
+2026-01-02T20:02:38.7067413Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.11/x64
+2026-01-02T20:02:38.7067741Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.11/x64
+2026-01-02T20:02:38.7068054Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.11/x64
+2026-01-02T20:02:38.7068378Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.11/x64/lib
+2026-01-02T20:02:38.7068664Z   QT_QPA_PLATFORM: offscreen
+2026-01-02T20:02:38.7068863Z ##[endgroup]
+2026-01-02T20:02:39.1771680Z INTERNALERROR> Traceback (most recent call last):
+2026-01-02T20:02:39.1772682Z INTERNALERROR>   File "/opt/hostedtoolcache/Python/3.13.11/x64/lib/python3.13/site-packages/_pytest/main.py", line 314, in wrap_session
+2026-01-02T20:02:39.1773600Z INTERNALERROR>     config._do_configure()
+2026-01-02T20:02:39.1773965Z INTERNALERROR>     ~~~~~~~~~~~~~~~~~~~~^^
+2026-01-02T20:02:39.1774789Z INTERNALERROR>   File "/opt/hostedtoolcache/Python/3.13.11/x64/lib/python3.13/site-packages/_pytest/config/__init__.py", line 1159, in _do_configure
+2026-01-02T20:02:39.1775781Z INTERNALERROR>     self.hook.pytest_configure.call_historic(kwargs=dict(config=self))
+2026-01-02T20:02:39.1776386Z INTERNALERROR>     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-01-02T20:02:39.1777214Z INTERNALERROR>   File "/opt/hostedtoolcache/Python/3.13.11/x64/lib/python3.13/site-packages/pluggy/_hooks.py", line 534, in call_historic
+2026-01-02T20:02:39.1777873Z INTERNALERROR>     res = self._hookexec(self.name, self._hookimpls.copy(), kwargs, False)
+2026-01-02T20:02:39.1778481Z INTERNALERROR>   File "/opt/hostedtoolcache/Python/3.13.11/x64/lib/python3.13/site-packages/pluggy/_manager.py", line 120, in _hookexec
+2026-01-02T20:02:39.1779106Z INTERNALERROR>     return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
+2026-01-02T20:02:39.1779520Z INTERNALERROR>            ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-01-02T20:02:39.1780067Z INTERNALERROR>   File "/opt/hostedtoolcache/Python/3.13.11/x64/lib/python3.13/site-packages/pluggy/_callers.py", line 167, in _multicall
+2026-01-02T20:02:39.1780808Z INTERNALERROR>     raise exception
+2026-01-02T20:02:39.1781292Z INTERNALERROR>   File "/opt/hostedtoolcache/Python/3.13.11/x64/lib/python3.13/site-packages/pluggy/_callers.py", line 121, in _multicall
+2026-01-02T20:02:39.1782081Z INTERNALERROR>     res = hook_impl.function(*args)
+2026-01-02T20:02:39.1782627Z INTERNALERROR>   File "/opt/hostedtoolcache/Python/3.13.11/x64/lib/python3.13/site-packages/pytestqt/plugin.py", line 241, in pytest_configure
+2026-01-02T20:02:39.1783215Z INTERNALERROR>     qt_api.set_qt_api(config.getini("qt_api"))
+2026-01-02T20:02:39.1783572Z INTERNALERROR>     ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-01-02T20:02:39.1784113Z INTERNALERROR>   File "/opt/hostedtoolcache/Python/3.13.11/x64/lib/python3.13/site-packages/pytestqt/qt_compat.py", line 108, in set_qt_api
+2026-01-02T20:02:39.1784666Z INTERNALERROR>     self.QtGui = _import_module("QtGui")
+2026-01-02T20:02:39.1784976Z INTERNALERROR>                  ~~~~~~~~~~~~~~^^^^^^^^^
+2026-01-02T20:02:39.1785548Z INTERNALERROR>   File "/opt/hostedtoolcache/Python/3.13.11/x64/lib/python3.13/site-packages/pytestqt/qt_compat.py", line 104, in _import_module
+2026-01-02T20:02:39.1786160Z INTERNALERROR>     m = __import__(_root_module, globals(), locals(), [module_name], 0)
+2026-01-02T20:02:39.1786641Z INTERNALERROR> ImportError: libEGL.so.1: cannot open shared object file: No such file or directory
+2026-01-02T20:02:39.2135071Z ##[error]Process completed with exit code 3.

@@ -25,7 +25,7 @@ from src.core.tunnel_manager import TunnelConfig, TunnelManager, TunnelStatus
 class TunnelDialog(QDialog):
     """Dialog for adding/editing a tunnel."""
 
-    def __init__(self, tunnel: TunnelConfig = None, parent=None):
+    def __init__(self, tunnel: TunnelConfig | None = None, parent=None):
         super().__init__(parent)
         self.tunnel = tunnel
         self.setWindowTitle("Edit Tunnel" if tunnel else "Add Tunnel")
