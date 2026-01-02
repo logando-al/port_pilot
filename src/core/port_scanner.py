@@ -95,6 +95,6 @@ class PortScanner:
             return "Unknown"
         try:
             proc = psutil.Process(pid)
-            return proc.name()
+            return str(proc.name())
         except (psutil.NoSuchProcess, psutil.AccessDenied):
             return "Unknown"

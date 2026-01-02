@@ -69,7 +69,7 @@ class ProcessKiller:
         """Check if a process is still running."""
         try:
             process = psutil.Process(pid)
-            return process.is_running()
+            return bool(process.is_running())
         except psutil.NoSuchProcess:
             return False
 
