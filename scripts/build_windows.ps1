@@ -2,8 +2,11 @@
 
 Write-Host "Building PortPilot for Windows..." -ForegroundColor Cyan
 
-# Install PyInstaller if not present
-pip install pyinstaller
+# Install PyInstaller and Pillow if not present
+pip install pyinstaller Pillow
+
+# Generate ICO from PNG (required for Windows executable icon)
+python -c "from PIL import Image; import os; img = Image.open('resources/icons/tray_icon.png'); img.save('resources/icons/tray_icon.ico', format='ICO', sizes=[(256, 256)])"
 
 # Build executable
 pyinstaller `
