@@ -1,4 +1,4 @@
-# Windows Build Script for PortPilot
+$ErrorActionPreference = "Stop"
 
 Write-Host "Building PortPilot for Windows..." -ForegroundColor Cyan
 
@@ -18,6 +18,12 @@ pyinstaller `
     --add-data "resources;resources" `
     src/main.py
 
+# Check if build was successful
+if (-not (Test-Path "dist/PortPilot.exe")) {
+    Write-Error "Build failed: dist/PortPilot.exe not found!"
+    Get-ChildItem -Recurse dist
+}
+
 # Create installer using Inno Setup (if available)
 if (Get-Command iscc -ErrorAction SilentlyContinue) {
     Write-Host "Creating installer with Inno Setup..." -ForegroundColor Cyan
@@ -25,9 +31,14 @@ if (Get-Command iscc -ErrorAction SilentlyContinue) {
 } else {
     Write-Host "Inno Setup not found. Skipping installer creation." -ForegroundColor Yellow
     # Rename executable for release
-    if (Test-Path "dist/PortPilot.exe") {
-        Copy-Item "dist/PortPilot.exe" "dist/PortPilot-Setup.exe"
-    }
+    Copy-Item "dist/PortPilot.exe" "dist/PortPilot-Setup.exe" -Force
+    Write-Host "Renamed PortPilot.exe to PortPilot-Setup.exe" -ForegroundColor Green
+}
+
+# Verify final artifact
+if (-not (Test-Path "dist/PortPilot-Setup.exe")) {
+     Write-Error "Final artifact dist/PortPilot-Setup.exe not found!"
 }
 
 Write-Host "Build complete!" -ForegroundColor Green
+Get-ChildItem dist
