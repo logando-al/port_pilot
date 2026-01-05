@@ -11,6 +11,22 @@ pyinstaller \
     --name "PortPilot" \
     --onefile \
     --windowed \
+    --paths "." \
+    --hidden-import "src.core" \
+    --hidden-import "src.core.port_scanner" \
+    --hidden-import "src.core.process_killer" \
+    --hidden-import "src.core.tunnel_manager" \
+    --hidden-import "src.core.version" \
+    --hidden-import "src.ui" \
+    --hidden-import "src.ui.tray_icon" \
+    --hidden-import "src.ui.dashboard" \
+    --hidden-import "src.ui.widgets" \
+    --hidden-import "src.ui.widgets.port_table" \
+    --hidden-import "src.ui.widgets.tunnel_list" \
+    --hidden-import "src.utils" \
+    --hidden-import "src.utils.config" \
+    --hidden-import "src.utils.platform_utils" \
+    --hidden-import "src.utils.updater" \
     --add-data "src/ui/styles:src/ui/styles" \
     --add-data "resources:resources" \
     src/main.py
