@@ -46,6 +46,11 @@ jobs:
           pip install -r requirements.txt
           pip install pyinstaller
       
+      - name: Install Inno Setup (Windows)
+        if: runner.os == 'Windows'
+        run: |
+          choco install innosetup -y
+          
       - name: Build (Windows)
         if: runner.os == 'Windows'
         run: pwsh ${{ matrix.build_script }}
