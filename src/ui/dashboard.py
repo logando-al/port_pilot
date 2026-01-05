@@ -39,6 +39,13 @@ class Dashboard(QMainWindow):
         self.setWindowTitle(f"PortPilot v{VERSION}")
         self.setMinimumSize(800, 600)
         self.resize(1000, 700)
+        
+        # Set window icon
+        from pathlib import Path
+        from PyQt6.QtGui import QIcon
+        icon_path = Path(__file__).parent.parent.parent / "resources" / "icons" / "tray_icon.png"
+        if icon_path.exists():
+            self.setWindowIcon(QIcon(str(icon_path)))
 
         # Center on screen
         screen = self.screen().geometry()
