@@ -33,7 +33,7 @@ def main():
     splash = SplashScreen()
     splash.show()
     app.processEvents()
-    
+
     # Load configuration
     config = Config()
     splash.set_status("Loading configuration...")
@@ -44,29 +44,29 @@ def main():
     splash.set_status("Checking for updates...")
     splash.set_progress(50)
     app.processEvents()
-    
+
     update_available = False
     update_message = ""
     if config.get("check_updates", True):
         updater = Updater()
         update_available, update_message = updater.check_for_updates()
-    
+
     splash.set_status("Initializing tray...")
     splash.set_progress(70)
     app.processEvents()
 
     # Create system tray icon
     tray = TrayIcon(app)
-    
+
     splash.set_status("Ready!")
     splash.set_progress(100)
     app.processEvents()
-    
+
     # Close splash and show main UI
     def finish_startup():
         splash.close()
         tray.show()
-        
+
         # Show update notification if available
         if update_available:
             from PyQt6.QtWidgets import QMessageBox
@@ -78,7 +78,7 @@ def main():
             )
             if reply == QMessageBox.StandardButton.Yes:
                 updater.download_and_install()
-        
+
         # Show notification
         tray.showMessage(
             "PortPilot",
@@ -86,11 +86,11 @@ def main():
             TrayIcon.MessageIcon.Information,
             2000
         )
-        
+
         # Start minimized or show dashboard
         if not config.get("start_minimized", False):
             tray._open_dashboard()
-    
+
     # Delay closing splash for smooth transition
     QTimer.singleShot(1500, finish_startup)
 

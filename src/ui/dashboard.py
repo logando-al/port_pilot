@@ -36,12 +36,13 @@ class Dashboard(QMainWindow):
 
     def _setup_window(self):
         """Configure window properties."""
-        self.setWindowTitle(f"PortPilot")
+        self.setWindowTitle("PortPilot")
         self.setMinimumSize(800, 600)
         self.resize(1000, 700)
-        
+
         # Set window icon
         from pathlib import Path
+
         from PyQt6.QtGui import QIcon
         icon_path = Path(__file__).parent.parent.parent / "resources" / "icons" / "tray_icon.png"
         if icon_path.exists():
