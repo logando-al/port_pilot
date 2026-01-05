@@ -2,8 +2,8 @@
 Centralized version management for PortPilot.
 """
 
-VERSION = "0.1.0"
-VERSION_TUPLE = (0, 1, 0)
+VERSION = "0.2.0"
+VERSION_TUPLE = (0, 2, 0)
 
 def get_version() -> str:
     """Return the current version string."""
