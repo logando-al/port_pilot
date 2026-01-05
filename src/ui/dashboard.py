@@ -36,7 +36,7 @@ class Dashboard(QMainWindow):
 
     def _setup_window(self):
         """Configure window properties."""
-        self.setWindowTitle(f"PortPilot v{VERSION}")
+        self.setWindowTitle(f"PortPilot")
         self.setMinimumSize(800, 600)
         self.resize(1000, 700)
         

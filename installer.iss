@@ -2,7 +2,7 @@
 ; Creates a proper Windows installer
 
 #define MyAppName "PortPilot"
-#define MyAppVersion "0.2.1"
+#define MyAppVersion "0.2.2"
 #define MyAppPublisher "logando-al"
 #define MyAppURL "https://github.com/logando-al/port_pilot"
 #define MyAppExeName "PortPilot.exe"

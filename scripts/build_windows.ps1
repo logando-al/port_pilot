@@ -23,6 +23,7 @@ pyinstaller `
     --hidden-import "src.ui" `
     --hidden-import "src.ui.tray_icon" `
     --hidden-import "src.ui.dashboard" `
+    --hidden-import "src.ui.splash_screen" `
     --hidden-import "src.ui.widgets" `
     --hidden-import "src.ui.widgets.port_table" `
     --hidden-import "src.ui.widgets.tunnel_list" `
